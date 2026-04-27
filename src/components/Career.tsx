@@ -1,59 +1,42 @@
 import "./styles/Career.css";
+import { profile } from "../data/profile";
 
 const Career = () => {
   return (
     <div className="career-section section-container">
       <div className="career-container">
         <h2>
-          My career <span>&</span>
-          <br /> experience
+          Education <span>&</span>
+          <br /> activities
         </h2>
         <div className="career-info">
           <div className="career-timeline">
             <div className="career-dot"></div>
           </div>
-          <div className="career-info-box">
-            <div className="career-info-in">
-              <div className="career-role">
-                <h4>Position In Company</h4>
-                <h5>Company Name</h5>
+          {profile.education.map((item) => (
+            <div className="career-info-box" key={item.title}>
+              <div className="career-info-in">
+                <div className="career-role">
+                  <h4>{item.title}</h4>
+                  <h5>{item.organization}</h5>
+                </div>
+                <h3>{item.meta}</h3>
               </div>
-              <h3>20XX</h3>
+              <p>{item.details.join(" • ")}</p>
             </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              labore sit non ipsum temporibus quidem, deserunt eaque officiis
-              mollitia ratione suscipit repellat.
-            </p>
-          </div>
-          <div className="career-info-box">
-            <div className="career-info-in">
-              <div className="career-role">
-                <h4>Position In Company</h4>
-                <h5>Company Name</h5>
+          ))}
+          {profile.activities.map((item) => (
+            <div className="career-info-box" key={item.title}>
+              <div className="career-info-in">
+                <div className="career-role">
+                  <h4>{item.title}</h4>
+                  <h5>{item.organization}</h5>
+                </div>
+                <h3>{item.meta}</h3>
               </div>
-              <h3>20XX</h3>
+              <p>{item.details.join(" • ")}</p>
             </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              labore sit non ipsum temporibus quidem, deserunt eaque officiis
-              mollitia ratione suscipit repellat.
-            </p>
-          </div>
-          <div className="career-info-box">
-            <div className="career-info-in">
-              <div className="career-role">
-                <h4>Position In Company</h4>
-                <h5>Company Name</h5>
-              </div>
-              <h3>NOW</h3>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              labore sit non ipsum temporibus quidem, deserunt eaque officiis
-              mollitia ratione suscipit repellat.
-            </p>
-          </div>
+          ))}
         </div>
       </div>
     </div>

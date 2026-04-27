@@ -8,6 +8,7 @@ import "./styles/SocialIcons.css";
 import { TbNotes } from "react-icons/tb";
 import { useEffect } from "react";
 import HoverLinks from "./HoverLinks";
+import { profile } from "../data/profile";
 
 const SocialIcons = () => {
   useEffect(() => {
@@ -80,8 +81,8 @@ const SocialIcons = () => {
           </a>
         </span>
       </div>
-      <a className="resume-button" href="#">
-        <HoverLinks text="RESUME" />
+      <a className="resume-button" href={`mailto:${profile.email}`}>
+        <HoverLinks text="CONNECT" />
         <span>
           <TbNotes />
         </span>
